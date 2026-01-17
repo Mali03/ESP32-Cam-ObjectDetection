@@ -9,6 +9,14 @@ Camera frames are processed directly on the ESP32, objects are detected using th
   <img src="/Result Example 2.png" width="350" />
 </p>
 
+## 🧾 Contents
+- [Features](#features)
+- [Hardware Requirements](#hardware-requirements)
+- [Known Limitations](#known-limitations)
+- [Installation](#installation)
+- [License](#license)
+- [Need help](#need-help)
+
 ## Features
 - ESP32-CAM (AI Thinker) support
 - Object Detection with Edge Impulse
