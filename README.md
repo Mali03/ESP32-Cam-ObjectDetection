@@ -1,4 +1,4 @@
-# ESP32-Cam Edge Impulse Object Detection
+# ESP32-CAM Edge Impulse Object Detection
 
 This project uses an ESP32-CAM (AI Thinker) module to run an Edge Impulse–trained AI object detection model and stream the results live through a web browser.
 
@@ -9,10 +9,26 @@ Camera frames are processed directly on the ESP32, objects are detected using th
   <img src="/Result Example 2.png" width="350" />
 </p>
 
+## Features
+- ESP32-CAM (AI Thinker) support
+- Object Detection with Edge Impulse
+- Bounding boxes drawn on live video
+- Built-in web server
+- Real-time MJPEG streaming (/stream endpoint)
+
+## Hardware Requirements
+- ESP32-CAM (AI Thinker)
+- USB-to-TTL adapter (FTDI, CP2102, etc.)
+- Jumper wires
+
+## Known Limitations
+- Higher resolutions reduce FPS
+- Many detections increase RAM usage
+- ESP32-CAM has limited compute resources for large models
+
 ## Installation
 
 ### Getting Ready
-To program the ESP32-CAM, follow these steps:
 1) Open Arduino IDE -> File -> Preferences
 2) Add following URL to **Additional boards manager URLs**;
 ```
@@ -24,13 +40,13 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
 2) Open Arduino IDE -> Library Manager
 3) Install the `EloquentEsp32Cam` library
 4) Go File -> Examples -> EloquentEsp32Cam -> `Collect_Images_for_EdgeImpulse`
-5) Upload the code to tje ESP32-CAM (For programming, see [Programming ESP32 Cam](#programming-esp32-cam))
+5) Upload the code to tje ESP32-CAM (For programming, see [Programming ESP32-CAM](#programming-esp32-cam))
 6) Collect images of the object to be detected (collect at least 50 images)
 
-### Programming ESP32 Cam
+### Programming ESP32-CAM
 The ESP32-CAM does not include an integrated USB-to-serial programmer so an external FTDI (USB-to-TTL) programmer is used for uploading code. (You can also use an Arduino Uno as a USB-to-serial adapter. For more information, refer to tutorial videos on YouTube.)
 <p float="left">
-  <img src="/FTDI Programmer Pinout.png" width="500" />
+  <img src="FTDI Programmer Pinout.png" width="500" />
 </p>
 
 ### Train an AI model with Edge Impulse
@@ -56,9 +72,27 @@ The ESP32-CAM does not include an integrated USB-to-serial programmer so an exte
 20) Click **Build** and download the generated library
 21) In Arduino IDE, go to Sketch → Include Library → Add .ZIP Library
 22) Open `ObjectDetection.ino` and replace
- ```
- #include <Maden_suyu_detection_inferencing.h>
- ```
- with your own model header file
-23) Upload the code and open the Serial Monitor at **115200 baud**
-24) Enter the ESP32-CAM IP address in your browser — and you're done!
+```cpp
+#include <Maden_suyu_detection_inferencing.h>
+```
+with your own model header file
+
+Update the WiFi credentials in the code before uploading it to the ESP32-CAM:
+```cpp
+const char *ssid = "*******";
+const char *password = "*******";
+```
+23) Upload the code and open the Serial Monitor at **115200 baud** and copy the ip address
+25) Open a browser and navigate to:
+```
+http://ESP32_IP_ADDRESS/
+```
+You will see the live camera stream with detected objects highlighted.
+
+## License
+This project is licensed under the **MIT License** - see the [LICENSE](https://github.com/Mali03/ESP32-Cam-ObjectDetection/blob/main/LICENSE) file for details.
+
+## Need Help
+If you need any help contact me on [LinkedIn](https://www.linkedin.com/in/mali03/).
+
+⭐ If you like this project, don’t forget to give it a star on GitHub!
