@@ -1,5 +1,11 @@
 # ESP32-CAM Edge Impulse Object Detection
 
+![ESP32](https://img.shields.io/badge/ESP32-blue?logo=espressif)
+![Edge Impulse](https://img.shields.io/badge/Edge%20Impulse-blueviolet?logo=edgeimpulse)
+![Computer Vision](https://img.shields.io/badge/Computer%20Vision-Object%20Detection-blue)
+![Deep Learning](https://img.shields.io/badge/Deep%20Learning-TinyML-orange)
+![IoT](https://img.shields.io/badge/IoT-green?logo=iot)
+
 This project uses an ESP32-CAM (AI Thinker) module to run an Edge Impulse–trained AI object detection model and stream the results live through a web browser.
 
 Camera frames are processed directly on the ESP32, objects are detected using the AI model, and bounding boxes with labels and confidence scores are drawn on the live video stream.
