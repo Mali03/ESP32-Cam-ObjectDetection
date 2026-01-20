@@ -1,6 +1,6 @@
 # ESP32-CAM Edge Impulse Object Detection
 
-![ESP32](https://img.shields.io/badge/ESP32-blue?logo=espressif)
+![ESP32-CAM](https://img.shields.io/badge/ESP32-blue?logo=espressif)
 ![Edge Impulse](https://img.shields.io/badge/Edge%20Impulse-blueviolet?logo=edgeimpulse)
 ![Computer Vision](https://img.shields.io/badge/Computer%20Vision-Object%20Detection-blue)
 ![Deep Learning](https://img.shields.io/badge/Deep%20Learning-TinyML-orange)
